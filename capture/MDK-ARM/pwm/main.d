@@ -32,3 +32,8 @@ pwm\main.o: ../Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal_tim.h
 pwm\main.o: ../Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal_tim_ex.h
 pwm\main.o: ../Core/Inc/tim.h
 pwm\main.o: ../Core/Inc/gpio.h
+pwm\main.o: ..\bsp\headfile.h
+pwm\main.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
+pwm\main.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
+pwm\main.o: ..\bsp\fun.h
+pwm\main.o: ..\bsp\lcd.h

@@ -24,7 +24,7 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-
+#include "headfile.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -87,15 +87,22 @@ int main(void)
   /* Initialize all configured peripherals */
   MX_GPIO_Init();
   MX_TIM2_Init();
+  MX_TIM17_Init();
   /* USER CODE BEGIN 2 */
+	LCD_Init();
+	LCD_Clear(Black);
+	LCD_SetBackColor(Black);
+	LCD_SetTextColor(White);
 	HAL_TIM_PWM_Start(&htim2, TIM_CHANNEL_2);
-	TIM2->CCR2 = 50; // 配置timer2定时器2的channel2通道2输出比较寄存器置为50，输出暂空比为50%
-  /* USER CODE END 2 */
+	TIM2->CCR2 = 50; // 配置timer2定时器的channel2通道2输出比较寄存器置为50，输出暂空比为50%
+  HAL_TIM_IC_Start_IT(&htim17, TIM_CHANNEL_1);
+	/* USER CODE END 2 */
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
   while (1)
   {
+		lcd_show();
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
